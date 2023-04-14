@@ -17,7 +17,8 @@
 //     "pytest-cov",
 //     "pytest-mock",
 //     "python-jose[cryptography]>=3.3.0",
-//     "requests>=2.28.2"
+//     "requests>=2.28.2",
+//     "rich>=13.3.4"
 //   ],
 //   "manylinux": "manylinux2014",
 //   "requirement_constraints": [],
@@ -449,6 +450,68 @@
           "artifacts": [
             {
               "algorithm": "sha256",
+              "hash": "5a35f8d1870171d9acc47b99612dc146129b631baf04970128b568f190d0cc30",
+              "url": "https://files.pythonhosted.org/packages/bf/25/2d88e8feee8e055d015343f9b86e370a1ccbec546f2865c98397aaef24af/markdown_it_py-2.2.0-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "7c9a5e412688bc771c67432cbfebcdd686c93ce6484913dccf06cb5a0bea35a1",
+              "url": "https://files.pythonhosted.org/packages/e4/c0/59bd6d0571986f72899288a95d9d6178d0eebd70b6650f1bb3f0da90f8f7/markdown-it-py-2.2.0.tar.gz"
+            }
+          ],
+          "project_name": "markdown-it-py",
+          "requires_dists": [
+            "attrs; extra == \"rtd\"",
+            "commonmark~=0.9; extra == \"compare\"",
+            "coverage; extra == \"testing\"",
+            "gprof2dot; extra == \"profiling\"",
+            "linkify-it-py<3,>=1; extra == \"linkify\"",
+            "markdown~=3.4; extra == \"compare\"",
+            "mdit-py-plugins; extra == \"plugins\"",
+            "mdurl~=0.1",
+            "mistletoe~=1.0; extra == \"compare\"",
+            "mistune~=2.0; extra == \"compare\"",
+            "myst-parser; extra == \"rtd\"",
+            "panflute~=2.3; extra == \"compare\"",
+            "pre-commit~=3.0; extra == \"code_style\"",
+            "psutil; extra == \"benchmarking\"",
+            "pytest-benchmark; extra == \"benchmarking\"",
+            "pytest-cov; extra == \"testing\"",
+            "pytest-regressions; extra == \"testing\"",
+            "pytest; extra == \"benchmarking\"",
+            "pytest; extra == \"testing\"",
+            "pyyaml; extra == \"rtd\"",
+            "sphinx-copybutton; extra == \"rtd\"",
+            "sphinx-design; extra == \"rtd\"",
+            "sphinx; extra == \"rtd\"",
+            "sphinx_book_theme; extra == \"rtd\"",
+            "typing_extensions>=3.7.4; python_version < \"3.8\""
+          ],
+          "requires_python": ">=3.7",
+          "version": "2.2.0"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
+              "hash": "84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8",
+              "url": "https://files.pythonhosted.org/packages/b3/38/89ba8ad64ae25be8de66a6d463314cf1eb366222074cfda9ee839c56a4b4/mdurl-0.1.2-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba",
+              "url": "https://files.pythonhosted.org/packages/d6/54/cfe61301667036ec958cb99bd3efefba235e65cdeb9c84d24a8293ba1d90/mdurl-0.1.2.tar.gz"
+            }
+          ],
+          "project_name": "mdurl",
+          "requires_dists": [],
+          "requires_python": ">=3.7",
+          "version": "0.1.2"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
               "hash": "a51725a815a6188c662fb66fb32077709a9ca38053f0274640293a14fdd22978",
               "url": "https://files.pythonhosted.org/packages/c5/21/275cfa7731ee2e121b1bf85ddb21b8712fe2f409f02a8b61521af6e4993d/numpy-1.24.2-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl"
             },
@@ -675,6 +738,26 @@
           "artifacts": [
             {
               "algorithm": "sha256",
+              "hash": "77a3299119af881904cd5ecd1ac6a66214b6e9bed1f2db16993b54adede64094",
+              "url": "https://files.pythonhosted.org/packages/08/4c/c587fc05d6f15f4deff971cb1a5b624429d6187c19f7274a50670edf3ec8/Pygments-2.15.0-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "f7e36cffc4c517fbc252861b9a6e4644ca0e5abadf9a113c72d1358ad09b9500",
+              "url": "https://files.pythonhosted.org/packages/03/98/c7468f5a1b434cb15b1d240c5f3bd015962af8a822e89e7f10ee11e68928/Pygments-2.15.0.tar.gz"
+            }
+          ],
+          "project_name": "pygments",
+          "requires_dists": [
+            "importlib-metadata; python_version < \"3.8\" and extra == \"plugins\""
+          ],
+          "requires_python": ">=3.7",
+          "version": "2.15.0"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
               "hash": "3799fa815351fea3a5e96ac7e503a96fa51cc9942c3753cda7651b93c1cfa362",
               "url": "https://files.pythonhosted.org/packages/1b/d1/72df649a705af1e3a09ffe14b0c7d3be1fd730da6b98beb4a2ed26b8a023/pytest-7.3.1-py3-none-any.whl"
             },
@@ -877,6 +960,29 @@
           "artifacts": [
             {
               "algorithm": "sha256",
+              "hash": "22b74cae0278fd5086ff44144d3813be1cedc9115bdfabbfefd86400cb88b20a",
+              "url": "https://files.pythonhosted.org/packages/9d/1a/28117ae737aec7c004ed5067034a8949adab43730420b50312821f466c3f/rich-13.3.4-py3-none-any.whl"
+            },
+            {
+              "algorithm": "sha256",
+              "hash": "b5d573e13605423ec80bdd0cd5f8541f7844a0e71a13f74cf454ccb2f490708b",
+              "url": "https://files.pythonhosted.org/packages/31/3b/2360352760b436f822258396e66ffb6d42585518a9cde2f93f142e64c5eb/rich-13.3.4.tar.gz"
+            }
+          ],
+          "project_name": "rich",
+          "requires_dists": [
+            "ipywidgets<9,>=7.5.1; extra == \"jupyter\"",
+            "markdown-it-py<3.0.0,>=2.2.0",
+            "pygments<3.0.0,>=2.13.0",
+            "typing-extensions<5.0,>=4.0.0; python_version < \"3.9\""
+          ],
+          "requires_python": ">=3.7.0",
+          "version": "13.3.4"
+        },
+        {
+          "artifacts": [
+            {
+              "algorithm": "sha256",
               "hash": "90260d9058e514786967344d0ef75fa8727eed8a7d2e43ce9f4bcf1b536174f7",
               "url": "https://files.pythonhosted.org/packages/49/97/fa78e3d2f65c02c8e1268b9aba606569fe97f6c8f7c2d74394553347c145/rsa-4.9-py3-none-any.whl"
             },
@@ -993,7 +1099,8 @@
     "pytest-cov",
     "pytest-mock",
     "python-jose[cryptography]>=3.3.0",
-    "requests>=2.28.2"
+    "requests>=2.28.2",
+    "rich>=13.3.4"
   ],
   "requires_python": [
     "==3.10.*"

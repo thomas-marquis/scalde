@@ -11,6 +11,7 @@ python_tests(
     sources=["tests_*/**/test_*.py"],
     dependencies=[
        "//:reqs_dev", 
+       ":reqs",
        ":src",
     ],
 )
