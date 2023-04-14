@@ -1,0 +1,69 @@
+[GLOBAL]
+pants_version = "2.15.0"
+backend_packages = [
+  "pants.backend.python",
+  "pants.backend.docker",
+  "pants.backend.python.lint.flake8",
+  "pants.backend.python.lint.isort",
+  "pants.backend.python.lint.black",
+  "pants.backend.plugin_development",
+]
+pythonpath = ["%(buildroot)s/pants-plugins"]
+level = "info"
+pantsd = false
+local_cache = true
+pants_ignore_use_gitignore = false
+
+[GLOBAL.pants_ignore]
+add = [
+  "/docs/",
+  "/scripts/",
+]
+
+[source]
+root_patterns = [
+  "/",
+  "/libs/*",
+]
+
+[test]
+output = "all"
+
+[python]
+interpreter_constraints = ["CPython==3.10.*"]
+enable_resolves = true
+
+[python.resolves]
+python-default = "3rdparty/python-default.lock" 
+
+[pytest]
+lockfile = "3rdparty/pytest.lock"
+
+[pytest.extra_requirements]
+add = [
+  "pytest-cov",
+  "pytest-mock",
+  "pytest-asyncio",
+  "freezegun",
+]
+
+[flake8]
+lockfile = "3rdparty/flake8.lock"
+
+[isort]
+lockfile = "3rdparty/isort.lock"
+
+[black]
+lockfile = "3rdparty/black.lock"
+
+[setuptools]
+lockfile = "3rdparty/setuptools.lock"
+
+[anonymous-telemetry]
+enabled = false
+
+[setup-py-generation]
+generate_setup_default = false
+
+[export]
+symlink_python_virtualenv = false

@@ -1,0 +1,43 @@
+23:56:34.76 [WARN] File watcher exiting with: The watcher was shut down.
+23:56:34.78 [33m[WARN][0m Unmatched glob from libs/scalde-easy-testting:tests's `sources` field: "libs/scalde-easy-testting/tests_*/**/test_*.py"
+
+Do the file(s) exist? If so, check if the file(s) are in your `.gitignore` or the global `pants_ignore` option, which may result in Pants not being able to see the file(s) even though they exist on disk. Refer to https://www.pantsbuild.org/v2.15/docs/troubleshooting#pants-cannot-find-a-file-in-your-project.
+23:56:34.78 [33m[WARN][0m Unmatched glob from libs/scalde-data-factory:tests's `sources` field: "libs/scalde-data-factory/tests_*/**/test_*.py"
+
+Do the file(s) exist? If so, check if the file(s) are in your `.gitignore` or the global `pants_ignore` option, which may result in Pants not being able to see the file(s) even though they exist on disk. Refer to https://www.pantsbuild.org/v2.15/docs/troubleshooting#pants-cannot-find-a-file-in-your-project.
+23:56:34.79 [33m[WARN][0m Unmatched glob from 3rdparty:python-default's `sources` field: "3rdparty/python-default.lock"
+
+Do the file(s) exist? If so, check if the file(s) are in your `.gitignore` or the global `pants_ignore` option, which may result in Pants not being able to see the file(s) even though they exist on disk. Refer to https://www.pantsbuild.org/v2.15/docs/troubleshooting#pants-cannot-find-a-file-in-your-project.
+23:56:34.79 [33m[WARN][0m Unmatched glob from libs/scalde-cognito-confidential:tests's `sources` field: "libs/scalde-cognito-confidential/tests_*/**/test_*.py"
+
+Do the file(s) exist? If so, check if the file(s) are in your `.gitignore` or the global `pants_ignore` option, which may result in Pants not being able to see the file(s) even though they exist on disk. Refer to https://www.pantsbuild.org/v2.15/docs/troubleshooting#pants-cannot-find-a-file-in-your-project.
+23:56:37.88 [INFO] Completed: Generate lockfile for flake8
+23:56:38.41 [INFO] Completed: Generate lockfile for black
+23:56:38.83 [INFO] Completed: Generate lockfile for isort
+23:56:39.34 [INFO] Completed: Generate lockfile for setuptools
+23:56:42.78 [INFO] Completed: Generate lockfile for pytest
+23:56:55.50 [INFO] Completed: Generate lockfile for python-default
+23:56:55.52 [INFO] notify invalidation: cleared 1 and dirtied 51 nodes for: {"3rdparty/black.lock", "3rdparty"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty", "3rdparty/flake8.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty/flake8.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty/flake8.lock", "3rdparty"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty/isort.lock", "3rdparty"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty/isort.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty", "3rdparty/pytest.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty/pytest.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty", "3rdparty/isort.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty", "3rdparty/python-default.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty/python-default.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty", "3rdparty/python-default.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty", "3rdparty/setuptools.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty/black.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty/black.lock", "3rdparty"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty/setuptools.lock"}
+23:56:55.52 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty", "3rdparty/setuptools.lock"}
+23:56:55.53 [INFO] notify invalidation: cleared 0 and dirtied 0 nodes for: {"3rdparty", "3rdparty/pytest.lock"}
+23:56:55.53 [INFO] Wrote lockfile for the resolve `python-default` to 3rdparty/python-default.lock
+23:56:55.53 [INFO] Wrote lockfile for the resolve `pytest` to 3rdparty/pytest.lock
+23:56:55.53 [INFO] Wrote lockfile for the resolve `setuptools` to 3rdparty/setuptools.lock
+23:56:55.53 [INFO] Wrote lockfile for the resolve `flake8` to 3rdparty/flake8.lock
+23:56:55.53 [INFO] Wrote lockfile for the resolve `isort` to 3rdparty/isort.lock
+23:56:55.53 [INFO] Wrote lockfile for the resolve `black` to 3rdparty/black.lock

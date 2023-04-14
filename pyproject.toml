@@ -1,0 +1,15 @@
+[tool.black]
+line-length = 120
+target-version = ['py310']
+
+[tool.isort]
+profile = "black"
+line_length = 120
+known_first_party = [
+    "shared", 
+    "make_data", 
+    "cognito_confidential", 
+    "easy_testing", 
+    "data_table",
+]
+default_section = "THIRDPARTY"
