@@ -1,15 +1,15 @@
 python_sources(
-    name="src", 
+    name="src",
     sources=["cognito_confidential/**/*.py"],
 )
 
 python_tests(
-    name="tests", 
+    name="tests",
     sources=["tests_*/**/test_*.py"],
     dependencies=[
-      "//:reqs_dev", 
-      ":reqs",
-      ":src",
+        "//:reqs_dev",
+        ":reqs",
+        ":src",
     ],
 )
 
@@ -17,33 +17,33 @@ python_requirements(
     name="reqs",
     module_mapping={
         "python-jose": ["jose"],
-    }
+    },
 )
 
 resources(
-  name="requirements",
-  sources=["requirements.txt"],
+    name="requirements",
+    sources=["requirements.txt"],
 )
 
 resource(
-  name="pyproject",
-  source="pyproject.toml",
+    name="pyproject",
+    source="pyproject.toml",
 )
 
 python_distribution(
-  name="dist",
-  dependencies=[
-    ":requirements",
-    ":pyproject",
-    ":src",
-    "//:version",
-  ],
-  repositories=[
-    "@pypi",
-  ],
-  provides=python_artifact(
-    name="artefact",
-  ),
-  wheel=True,
-  sdist=False,
+    name="dist",
+    dependencies=[
+        ":requirements",
+        ":pyproject",
+        ":src",
+        "//:version",
+    ],
+    repositories=[
+        "@pypi",
+    ],
+    provides=python_artifact(
+        name="artefact",
+    ),
+    wheel=True,
+    sdist=False,
 )
