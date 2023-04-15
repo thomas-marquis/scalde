@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "scalde-easy-testting"
+name = "scalde-easy-testing"
 dynamic = ["version", "dependencies"]
 authors = [
     {name = "Thomas Marquis", email = "thomas.marquis.dev@gmail.com"},
