@@ -7,7 +7,9 @@ python_tests(
     name="tests", 
     sources=["tests_*/**/test_*.py"],
     dependencies=[
-       "//:reqs_dev", 
+      "//:reqs_dev", 
+      ":reqs",
+      ":src",
     ],
 )
 
@@ -16,4 +18,32 @@ python_requirements(
     module_mapping={
         "python-jose": ["jose"],
     }
+)
+
+resources(
+  name="requirements",
+  sources=["requirements.txt"],
+)
+
+resource(
+  name="pyproject",
+  source="pyproject.toml",
+)
+
+python_distribution(
+  name="dist",
+  dependencies=[
+    ":requirements",
+    ":pyproject",
+    ":src",
+    "//:version",
+  ],
+  repositories=[
+    "@pypi",
+  ],
+  provides=python_artifact(
+    name="artefact",
+  ),
+  wheel=True,
+  sdist=False,
 )

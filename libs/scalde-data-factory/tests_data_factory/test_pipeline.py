@@ -2,16 +2,8 @@ import re
 from unittest.mock import MagicMock
 
 import pytest
+from data_factory import DataPipeline, DataValidation, DataValidationError, Exporter, Loader, ParallelSteps, Step
 
-from data_factory import (
-    DataPipeline,
-    DataValidation,
-    DataValidationError,
-    Exporter,
-    Loader,
-    ParallelSteps,
-    Step,
-)
 from easy_testing import DataFrameBuilder, assert_called_once_with_frame
 
 

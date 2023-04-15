@@ -648,7 +648,8 @@ class TestAssertFrameEquals:
         with pytest.raises(
             AssertionError,
             match=re.escape(
-                "Columns are different. left ones are ['age', 'job', 'name'] and right ones are ['age', 'city', 'job', 'name']"
+                "Columns are different. left ones are ['age', 'job', 'name'] "
+                "and right ones are ['age', 'city', 'job', 'name']"
             ),
         ):
             assert_frame_equals(df1, df2)

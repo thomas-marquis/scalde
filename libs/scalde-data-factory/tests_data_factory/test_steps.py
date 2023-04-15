@@ -2,9 +2,9 @@ import re
 from unittest.mock import MagicMock
 
 import pytest
-
 from data_factory.exceptions import PipelineDefinitionError, PipelineProcessError
 from data_factory.steps import ParallelSteps, Step
+
 from easy_testing import DataFrameBuilder, assert_frame_equals
 
 

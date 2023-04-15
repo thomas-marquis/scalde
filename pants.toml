@@ -7,6 +7,7 @@ backend_packages = [
   "pants.backend.python.lint.isort",
   "pants.backend.python.lint.black",
   "pants.backend.plugin_development",
+  "pants.backend.experimental.python",
 ]
 pythonpath = ["%(buildroot)s/pants-plugins"]
 level = "info"

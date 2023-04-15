@@ -1,0 +1,42 @@
+name: cicd
+run-name: ${{ github.actor }} trigger publish libs workflow
+on: workflow_dispatch
+
+env:
+  PYTHON_VERSION: 3.10
+
+jobs:
+  build-and-publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v3
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+
+      - name: Install Pants
+        run: |
+          set -e
+          chmod +x ./scripts/install_pants.sh
+          ./scripts/install_pants.sh
+
+      - name: Run tests
+        run: |
+          set -e
+          pants test ::
+
+      - name: Lint and check
+        run: |
+          set -e
+          pants lint ::
+          pants check ::
+
+      - name: Publish
+        env:
+          TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}}
+        run: |
+          set -e
+          pants publish ::
+

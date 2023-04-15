@@ -1,4 +1,4 @@
-from typing import Iterable
+from typing import Any, Iterable
 from unittest.mock import MagicMock
 
 import pandas as pd
@@ -25,24 +25,10 @@ def assert_called_once_with_frame(mock: MagicMock, *args, **kwargs) -> None:
         )
 
     for arg, call_arg in zip(args, call_args):
-        if isinstance(arg, pd.DataFrame):
-            assert_frame_equals(call_arg, arg)
-        elif isinstance(arg, AssertFrame):
-            assert_frame_equals(call_arg, arg.data, **arg.kwargs)
-        else:
-            if arg != call_arg:
-                raise AssertionError(f"Expected {arg} but got {call_arg}")
+        _assert_frame_equals_in_args(arg, call_arg)
 
     for (actual_kwarg, actual_value), (expected_kwarg, expected_value) in zip(call_kwargs.items(), kwargs.items()):
-        if isinstance(expected_value, pd.DataFrame):
-            assert_frame_equals(actual_value, expected_value)
-        elif isinstance(expected_value, AssertFrame):
-            assert_frame_equals(actual_value, expected_value.data, **expected_value.kwargs)
-        else:
-            if expected_value != actual_value:
-                raise AssertionError(
-                    f"Expected {expected_kwarg}={expected_value} but got {actual_kwarg}={actual_value}"
-                )
+        _assert_frame_equals_in_kwargs(actual_kwarg, actual_value, expected_kwarg, expected_value)
 
 
 def assert_contains_line(data: pd.DataFrame, line: Iterable) -> None:
@@ -164,3 +150,25 @@ def _check_columns(dataframe: pd.DataFrame, columns: Iterable[str], side: str) -
     if missing_columns:
         missing_columns_msg = ", ".join([f"'{col}'" for col in missing_columns])
         raise ValueError(f"Column(s) {missing_columns_msg} not found in {side} dataframe")
+
+
+def _assert_frame_equals_in_kwargs(
+    actual_kwarg: dict, actual_value: Any, expected_kwarg: dict, expected_value: Any
+) -> None:
+    if isinstance(expected_value, pd.DataFrame):
+        assert_frame_equals(actual_value, expected_value)
+    elif isinstance(expected_value, AssertFrame):
+        assert_frame_equals(actual_value, expected_value.data, **expected_value.kwargs)
+    else:
+        if expected_value != actual_value:
+            raise AssertionError(f"Expected {expected_kwarg}={expected_value} but got {actual_kwarg}={actual_value}")
+
+
+def _assert_frame_equals_in_args(arg: list, call_arg: list) -> None:
+    if isinstance(arg, pd.DataFrame):
+        assert_frame_equals(call_arg, arg)
+    elif isinstance(arg, AssertFrame):
+        assert_frame_equals(call_arg, arg.data, **arg.kwargs)
+    else:
+        if arg != call_arg:
+            raise AssertionError(f"Expected {arg} but got {call_arg}")
