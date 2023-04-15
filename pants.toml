@@ -6,6 +6,7 @@ backend_packages = [
   "pants.backend.python.lint.flake8",
   "pants.backend.python.lint.isort",
   "pants.backend.python.lint.black",
+  "pants.backend.python.typecheck.mypy",
   "pants.backend.plugin_development",
   "pants.backend.experimental.python",
 ]
@@ -57,11 +58,11 @@ lockfile = "3rdparty/isort.lock"
 [black]
 lockfile = "3rdparty/black.lock"
 
+[mypy]
+lockfile = "3rdparty/mypy.lock"
+
 [setuptools]
 lockfile = "3rdparty/setuptools.lock"
-
-[anonymous-telemetry]
-enabled = false
 
 [setup-py-generation]
 generate_setup_default = false

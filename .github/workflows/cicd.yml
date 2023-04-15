@@ -2,45 +2,45 @@ name: cicd
 run-name: ${{ github.actor }} trigger publish libs workflow
 on: workflow_dispatch
 
-env:
-  PYTHON_VERSION: "3.10"
-
 jobs:
   build-and-publish:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    strategy:
+      matrix:
+        python-version: ["3.10", "3.11"]
     steps:
       - name: Set timezone
         run: |
           sudo timedatectl set-timezone Europe/Paris
-          
+
       - uses: actions/checkout@v3
 
       - name: Set up Python
-        uses: actions/setup-python@v3
+        uses: actions/setup-python@v4
         with:
-          python-version: ${{ env.PYTHON_VERSION }}
+          python-version: ${{ matrix.python-version }}
 
-      - name: Install Pants
-        run: |
-          set -e
-          chmod +x ./scripts/install-pants.sh 
-          ./scripts/install-pants.sh
+      - uses: pantsbuild/actions/init-pants@v4-scie-pants
+        with:
+          gha-cache-key: v0
+          named-caches-hash: ${{ hashFiles('python-default.lock') }}
+          cache-lmdb-store: 'false'
 
-      - name: Run tests
+      - name: Check BUILD files
+        run:  |
+          pants tailor --check update-build-files --check ::
+
+      - name: Lint and typecheck
+        run: | 
+          pants lint check ::
+
+      - name: Test
         run: |
-          set -e
           pants test ::
-
-      - name: Lint and check
-        run: |
-          set -e
-          pants lint ::
-          pants check ::
 
       - name: Publish
         env:
           TWINE_PASSWORD: ${{ secrets.PYPI_TOKEN }}}
         run: |
-          set -e
           pants publish ::
 
