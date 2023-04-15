@@ -6,7 +6,7 @@
 // {
 //   "version": 3,
 //   "valid_for_interpreter_constraints": [
-//     "CPython==3.10.*"
+//     "CPython>=3.10.*"
 //   ],
 //   "generated_with_requirements": [
 //     "flake8<5.1,>=5.0.4"
@@ -116,7 +116,7 @@
     "flake8<5.1,>=5.0.4"
   ],
   "requires_python": [
-    "==3.10.*"
+    ">=3.10.*"
   ],
   "resolver_version": "pip-2020-resolver",
   "style": "universal",

@@ -30,13 +30,21 @@ resource(
     source="pyproject.toml",
 )
 
+resource(
+    name="readme",
+    source="README.md",
+)
+
+resource(name="version", source="VERSION")
+
 python_distribution(
     name="dist",
     dependencies=[
         ":requirements",
         ":pyproject",
         ":src",
-        "//:version",
+        ":version",
+        ":readme",
     ],
     repositories=[
         "@pypi",
