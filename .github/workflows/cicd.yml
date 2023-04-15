@@ -9,6 +9,10 @@ jobs:
   build-and-publish:
     runs-on: ubuntu-latest
     steps:
+      - name: Set timezone
+        run: |
+          sudo timedatectl set-timezone Europe/Paris
+          
       - uses: actions/checkout@v3
 
       - name: Set up Python
@@ -19,8 +23,8 @@ jobs:
       - name: Install Pants
         run: |
           set -e
-          chmod +x ./scripts/install_pants.sh
-          ./scripts/install_pants.sh
+          chmod +x ./scripts/install-pants.sh 
+          ./scripts/install-pants.sh
 
       - name: Run tests
         run: |
