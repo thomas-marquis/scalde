@@ -3,7 +3,7 @@ run-name: ${{ github.actor }} trigger publish libs workflow
 on: workflow_dispatch
 
 env:
-  PYTHON_VERSION: 3.10
+  PYTHON_VERSION: "3.10"
 
 jobs:
   build-and-publish:
