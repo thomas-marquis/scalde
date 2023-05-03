@@ -8,8 +8,6 @@ backend_packages = [
   "pants.backend.python.lint.black",
   "pants.backend.python.typecheck.mypy",
   "pants.backend.experimental.python",
-  "pants.backend.plugin_development",
-  # "libs_plugin",
 ]
 pythonpath = ["%(buildroot)s/pants-plugins"]
 level = "info"
@@ -26,8 +24,7 @@ add = [
 [source]
 root_patterns = [
   "/",
-  "/libs/*",
-  # "/pants-plugins/*",
+  "/scalde/*",
 ]
 
 [test]
@@ -72,3 +69,6 @@ generate_setup_default = false
 
 [export]
 symlink_python_virtualenv = false
+
+[anonymous-telemetry] 
+enabled = false

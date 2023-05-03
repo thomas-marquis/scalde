@@ -3,5 +3,3 @@ pytest-cov
 pytest-mock
 pytest-asyncio
 freezegun
-pantsbuild.pants.testutil
-pantsbuild.pants

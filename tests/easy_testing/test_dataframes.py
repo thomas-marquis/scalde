@@ -4,8 +4,8 @@ from unittest.mock import MagicMock
 import pandas as pd
 import pytest
 
-from easy_testing.builders import DataFrameBuilder
-from easy_testing.dataframes import (
+from scalde.easy_testing.builders import DataFrameBuilder
+from scalde.easy_testing.dataframes import (
     AssertFrame,
     assert_called_once_with_frame,
     assert_contains_line,

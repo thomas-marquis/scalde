@@ -1,0 +1,10 @@
+python_tests(
+    name="tests",
+    sources=["**/test_*.py"],
+    dependencies=[
+        "//:reqs_dev",
+        "scalde/data_factory:reqs",
+        "scalde/data_factory:src",
+        "scalde/easy_testing:src",
+    ],
+)

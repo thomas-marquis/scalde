@@ -1,4 +1,4 @@
-from easy_testing.builders import DataFrameBuilder
+from scalde.easy_testing.builders import DataFrameBuilder
 
 
 class TestDataFrameBuilder:
