@@ -129,3 +129,4 @@ dmypy.json
 .pyre/
 .pants.d/
 .env
+secrets*

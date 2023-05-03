@@ -7,8 +7,9 @@ backend_packages = [
   "pants.backend.python.lint.isort",
   "pants.backend.python.lint.black",
   "pants.backend.python.typecheck.mypy",
-  "pants.backend.plugin_development",
   "pants.backend.experimental.python",
+  "pants.backend.plugin_development",
+  # "libs_plugin",
 ]
 pythonpath = ["%(buildroot)s/pants-plugins"]
 level = "info"
@@ -26,6 +27,7 @@ add = [
 root_patterns = [
   "/",
   "/libs/*",
+  # "/pants-plugins/*",
 ]
 
 [test]
@@ -36,7 +38,8 @@ interpreter_constraints = ["CPython>=3.10.*"]
 enable_resolves = true
 
 [python.resolves]
-python-default = "3rdparty/python-default.lock" 
+python-default = "3rdparty/python-default.lock"
+pants-plugins = "3rdparty/pants-plugins.lock"
 
 [pytest]
 lockfile = "3rdparty/pytest.lock"
